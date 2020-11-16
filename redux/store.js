@@ -1,7 +1,8 @@
-import { useMemo } from "react";
+// import { useMemo } from "react";
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunkMiddleware from "redux-thunk";
+import { createWrapper } from "next-redux-wrapper";
 import reducers from "./reducers";
 
 function initStore(initialState) {
@@ -35,7 +36,27 @@ export const initializeStore = (preloadedState) => {
   return _store;
 };
 
-export function useStore(initialState) {
-  const store = useMemo(() => initializeStore(initialState), [initialState]);
-  return store;
-}
+export const wrapper = createWrapper(initializeStore);
+
+// export function useStore(initialState) {
+//   const store = useMemo(() => initializeStore(initialState), [initialState]);
+//   return store;
+// }
+
+// import { createStore, applyMiddleware, combineReducers } from "redux";
+// import { HYDRATE, createWrapper } from "next-redux-wrapper";
+// import thunkMiddleware from "redux-thunk";
+
+// const bindMiddleware = (middleware) => {
+//   if (process.env.NODE_ENV !== "production") {
+//     const { composeWithDevTools } = require("redux-devtools-extension");
+//     return composeWithDevTools(applyMiddleware(...middleware));
+//   }
+//   return applyMiddleware(...middleware);
+// };
+
+// const initStore = () => {
+//   return createStore(reducer, bindMiddleware([thunkMiddleware]));
+// };
+
+// export const wrapper = createWrapper(initStore);

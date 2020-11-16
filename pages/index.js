@@ -4,13 +4,13 @@ import { AddNewTransaction } from "../components/Add-Transaction/AddNewTransacti
 // import Example from "../components/clock-example/example";
 import BalanceDisplay from "../components/BalanceDisplay";
 import { HistoryDisplay } from "../components/History-Components/HistoryDisplay";
-import { startClock } from "../redux/actions";
+// import { startClock } from "../redux/actions";
 
 export default function IndexPage() {
-  const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch(startClock());
-  }, [dispatch]);
+  // const dispatch = useDispatch();
+  // React.useEffect(() => {
+  //   dispatch(startClock());
+  // }, [dispatch]);
 
   return (
     <div className="container mx-auto bg-gray-100">

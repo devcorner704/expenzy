@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { AddTransactionButton } from "./addTransactionComponents/AddTransactionButton";
-import { AmountInputField } from "./addTransactionComponents/AmountInputField";
+import AmountInputField from "./addTransactionComponents/AmountInputField";
 import { TextLabelInput } from "./addTransactionComponents/TextLabelInput";
 
 export const AddNewTransaction = () => {
