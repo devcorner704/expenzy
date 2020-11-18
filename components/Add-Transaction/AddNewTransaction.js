@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { AddTransactionButton } from "./addTransactionComponents/AddTransactionButton";
-import AmountInputField from "./addTransactionComponents/AmountInputField";
-import { TextLabelInput } from "./addTransactionComponents/TextLabelInput";
+import ModalTransaction from "../Add-Trans-Modal/ModalTransaction";
 
 export const AddNewTransaction = () => {
   return (
@@ -10,9 +8,7 @@ export const AddNewTransaction = () => {
       <div className="font-mono font-bold px-2 text-lg text-gray-700 leading-none border-b-2 rounded-sm">
         Add New Transaction
       </div>
-      <TextLabelInput />
-      <AmountInputField />
-      <AddTransactionButton />
+      <ModalTransaction />
     </section>
   );
 };

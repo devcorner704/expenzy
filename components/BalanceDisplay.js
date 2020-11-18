@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
+// import setGlobalAmount from "../redux/actions";
 
-export const BalanceDisplay = () => {
+export const BalanceDisplay = ({ amount }) => {
   return (
     <>
       <section className="title-section">
@@ -19,7 +20,7 @@ export const BalanceDisplay = () => {
             Your Balance
           </div>
           <div className="font-mono font-bold px-2 text-xl text-gray-800 leading-1">
-            $ 260.00
+            $ {amount}
           </div>
         </div>
       </section>
@@ -48,7 +49,9 @@ export const BalanceDisplay = () => {
             </div>
 
             <div className="py-4 px-6">
-              <h1 className="text-base font-semibold text-gray-800">$ 1000</h1>
+              <h1 className="text-base font-semibold text-gray-800">
+                $ {amount}
+              </h1>
             </div>
           </div>
           <div className="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
@@ -83,8 +86,12 @@ export const BalanceDisplay = () => {
   );
 };
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  amount: state.amount.value,
+});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  // setGlobalAmount,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(BalanceDisplay);

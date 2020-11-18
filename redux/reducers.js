@@ -15,21 +15,72 @@ import { combineReducers } from "redux";
 //   }
 // }
 
-// INITIAL AMOUNT REDUCER
-const initialState = {
-  value: 10,
-};
-
-const amountReducer = (state = initialState, { type, payload }) => {
+const amountReducer = (state = { value: "" }, { type, payload }) => {
   switch (type) {
     case "SETTING_GLOBAL_AMOUNT":
       return {
         ...state,
         value: payload,
       };
+    case "RESET":
+      return 0;
+    default:
+      return state;
+  }
+};
 
-    // case types.DECREMENT:
-    //   return state - 1;
+const incomeReducer = (state = { value: "" }, { type, payload }) => {
+  switch (type) {
+    case "SETTING_INCOME":
+      return {
+        ...state,
+        value: payload,
+      };
+    case "RESET":
+      return 0;
+    default:
+      return state;
+  }
+};
+
+const expenseReducer = (state = { value: "" }, { type, payload }) => {
+  switch (type) {
+    case "SETTING_EXPENSE":
+      return {
+        ...state,
+        value: payload,
+      };
+    case "RESET":
+      return 0;
+    default:
+      return state;
+  }
+};
+
+const currentLabelReducer = (state = { value: "" }, { type, payload }) => {
+  switch (type) {
+    case "SETTING_CURRENT_LABEL":
+      return {
+        ...state,
+        value: payload,
+      };
+    case "RESET":
+      return 0;
+    default:
+      return state;
+  }
+};
+
+const currentTransactionTypeReducer = (
+  state = { value: "" },
+  { type, payload }
+) => {
+  switch (type) {
+    case "SETTING_CURRENT_TRANSACTION_TYPE":
+      return {
+        ...state,
+        value: payload,
+      };
     case "RESET":
       return 0;
     default:
@@ -40,6 +91,10 @@ const amountReducer = (state = initialState, { type, payload }) => {
 // COMBINED REDUCERS
 const reducers = {
   amount: amountReducer,
+  income: incomeReducer,
+  expense: expenseReducer,
+  currentLabel: currentLabelReducer,
+  transactionType: currentTransactionTypeReducer,
 };
 
 export default combineReducers(reducers);

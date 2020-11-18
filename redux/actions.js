@@ -23,8 +23,28 @@
 // export const resetCount = () => ({ type: types.RESET })
 
 // Expenzee ACTIONS START HERE
-export const setGlobalAmount = (globalAmount) => (dispatch) =>
+export const setCurrentLabel = (currentLabel) => (dispatch) =>
   dispatch({
-    type: "SETTING_GLOBAL_AMOUNT",
-    payload: globalAmount,
+    type: "SETTING_CURRENT_LABEL",
+    payload: currentLabel,
+  });
+
+export const setIncome = (income) => (dispatch) =>
+  dispatch({
+    type: "SETTING_INCOME",
+    payload: income,
+  });
+
+export const setExpense = (expense) => (dispatch) =>
+  dispatch({
+    type: "SETTING_EXPENSE",
+    payload: expense,
+  });
+
+export const setCurrentTransactionType = (currentTransactionType) => (
+  dispatch
+) =>
+  dispatch({
+    type: "SETTING_CURRENT_TRANSACTION_TYPE",
+    payload: currentTransactionType,
   });
